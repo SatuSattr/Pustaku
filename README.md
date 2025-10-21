@@ -1,61 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 Pustaku — Library Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Pustaku** adalah platform manajemen perpustakaan berbasis web yang dibangun dengan Laravel 12. Proyek ini memfasilitasi dua jenis pengguna:
 
-## About Laravel
+- **Admin** – mengelola katalog buku, stok, serta status peminjaman.
+- **Siswa** – menjelajahi koleksi buku ala toko daring, membaca detail, dan mengajukan peminjaman secara daring.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Dengan tampilan modern berbasis TailwindCSS, Pustaku menghadirkan pengalaman yang familiar seperti marketplace buku namun ditujukan untuk kebutuhan perpustakaan sekolah.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Fitur Utama
 
-## Learning Laravel
+- 👤 **Autentikasi Berbasis Peran** – Login menggunakan username dengan hak akses Admin & Siswa (Laravel Breeze).
+- 📚 **Manajemen Buku Lengkap** – CRUD buku, unggah cover, atur kategori, dan status ketersediaan.
+- 🗂️ **Kontrol Peminjaman** – Admin memantau status (_processing_, _borrowed_, _returned_) lengkap dengan history.
+- 🛒 **Katalog Interaktif** – Siswa dapat mencari, memfilter, dan melihat detail buku ala kartu e-commerce.
+- 📝 **Form Peminjaman Dinamis** – Validasi stok otomatis, serta form akan muncul setelah siswa login atau registrasi.
+- 📊 **Dashboard Statistik** – Ringkasan koleksi, aktivitas peminjaman terakhir, dan shortcut aksi cepat untuk admin.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🛠️ Teknologi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- ⚙️ **Laravel 12** – Framework backend utama.
+- 🔐 **Laravel Breeze** – Scaffolding autentikasi berbasis Blade & Tailwind.
+- 💾 **SQLite** – Basis data ringan untuk kemudahan distribusi.
+- 🎨 **TailwindCSS** – Utility-first styling dengan Vite.
+- 🧪 **Pest / PHPUnit** – Unit & feature testing.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Instalasi & Setup
 
-### Premium Partners
+> Pastikan PHP ≥ 8.2, Composer, Node.js ≥ 18, dan npm sudah terpasang.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+# 1. Clone repository
+git clone https://github.com/username/pustaku.git
+cd pustaku
 
-## Contributing
+# 2. Install dependency PHP
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# 3. Salin konfigurasi lingkungan
+cp .env.example .env
+php artisan key:generate
 
-## Code of Conduct
+# 4. Siapkan basis data SQLite
+touch database/database.sqlite
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 5. Migrasi & seeding data awal (admin + katalog buku)
+php artisan migrate --seed
 
-## Security Vulnerabilities
+# 6. Install dan build asset frontend
+npm install
+npm run dev   # gunakan npm run build untuk produksi
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 7. Jalankan aplikasi
+php artisan serve
+```
 
-## License
+### 🔑 Kredensial Default
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Peran  | Username | Password  |
+| ------ | -------- | ---------- |
+| Admin  | `admin`  | `password` |
+
+Setelah login sebagai admin, kamu bisa menambah akun siswa atau meminta siswa mendaftar sendiri melalui landing page.
+
+---
+
+## 📸 Galeri Antarmuka
+
+<table>
+  <tr>
+    <td><img src="https://placehold.co/600x400?text=Landing+Hero" alt="Landing Hero" /></td>
+    <td><img src="https://placehold.co/600x400?text=Catalogue+Grid" alt="Catalogue Grid" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://placehold.co/600x400?text=Book+Detail" alt="Book Detail" /></td>
+    <td><img src="https://placehold.co/600x400?text=Borrow+Form" alt="Borrow Form" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://placehold.co/600x400?text=Admin+Dashboard" alt="Admin Dashboard" /></td>
+    <td><img src="https://placehold.co/600x400?text=Book+Management" alt="Book Management" /></td>
+  </tr>
+</table>
+
+> 🖼️ Ganti URL placeholder di atas dengan screenshot final sesuai kebutuhanmu.
+
+---
+
+## 🧪 Testing
+
+Jalankan seluruh feature & unit test dengan:
+
+```bash
+php artisan test
+```
+
+---
+
+## 🤝 Kontribusi
+
+Saran fitur atau perbaikan tampilan? Silakan buat _issue_ atau _pull request_.
+
+---
+
+Selamat menggunakan **Pustaku**. Semoga membantu digitalisasi perpustakaan sekolahmu! 🚀

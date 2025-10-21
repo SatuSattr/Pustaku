@@ -9,6 +9,25 @@ Dengan tampilan modern berbasis TailwindCSS, Pustaku menghadirkan pengalaman yan
 
 ---
 
+## 📸 Galeri Antarmuka
+
+<table>
+  <tr>
+    <td><img src="screenshots/1.png" /></td>
+    <td><img src="screenshots/2.png" /></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/3.png" /></td>
+    <td><img src="screenshots/4.png" /></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/5.png" /></td>
+    <td><img src="screenshots/7.png" /></td>
+  </tr>
+</table>
+
+---
+
 ## ✨ Fitur Utama
 
 -   👤 **Autentikasi Berbasis Peran** – Login menggunakan username dengan hak akses Admin & Siswa (Laravel Breeze).
@@ -68,24 +87,6 @@ php artisan serve
 
 Setelah login sebagai admin, kamu bisa menambah akun siswa atau meminta siswa mendaftar sendiri melalui landing page.
 
----
-
-## 📸 Galeri Antarmuka
-
-<table>
-  <tr>
-    <td><img src="screenshots/1.png" /></td>
-    <td><img src="screenshots/2.png" /></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/3.png" /></td>
-    <td><img src="screenshots/4.png" /></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/5.png" /></td>
-    <td><img src="screenshots/7.png" /></td>
-  </tr>
-</table>
 
 ---
 

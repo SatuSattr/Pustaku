@@ -2,8 +2,8 @@
 
 **Pustaku** adalah platform manajemen perpustakaan berbasis web yang dibangun dengan Laravel 12. Proyek ini memfasilitasi dua jenis pengguna:
 
-- **Admin** – mengelola katalog buku, stok, serta status peminjaman.
-- **Siswa** – menjelajahi koleksi buku ala toko daring, membaca detail, dan mengajukan peminjaman secara daring.
+-   **Admin** – mengelola katalog buku, stok, serta status peminjaman.
+-   **Siswa** – menjelajahi koleksi buku ala toko daring, membaca detail, dan mengajukan peminjaman secara daring.
 
 Dengan tampilan modern berbasis TailwindCSS, Pustaku menghadirkan pengalaman yang familiar seperti marketplace buku namun ditujukan untuk kebutuhan perpustakaan sekolah.
 
@@ -11,22 +11,22 @@ Dengan tampilan modern berbasis TailwindCSS, Pustaku menghadirkan pengalaman yan
 
 ## ✨ Fitur Utama
 
-- 👤 **Autentikasi Berbasis Peran** – Login menggunakan username dengan hak akses Admin & Siswa (Laravel Breeze).
-- 📚 **Manajemen Buku Lengkap** – CRUD buku, unggah cover, atur kategori, dan status ketersediaan.
-- 🗂️ **Kontrol Peminjaman** – Admin memantau status (_processing_, _borrowed_, _returned_) lengkap dengan history.
-- 🛒 **Katalog Interaktif** – Siswa dapat mencari, memfilter, dan melihat detail buku ala kartu e-commerce.
-- 📝 **Form Peminjaman Dinamis** – Validasi stok otomatis, serta form akan muncul setelah siswa login atau registrasi.
-- 📊 **Dashboard Statistik** – Ringkasan koleksi, aktivitas peminjaman terakhir, dan shortcut aksi cepat untuk admin.
+-   👤 **Autentikasi Berbasis Peran** – Login menggunakan username dengan hak akses Admin & Siswa (Laravel Breeze).
+-   📚 **Manajemen Buku Lengkap** – CRUD buku, unggah cover, atur kategori, dan status ketersediaan.
+-   🗂️ **Kontrol Peminjaman** – Admin memantau status (_processing_, _borrowed_, _returned_) lengkap dengan history.
+-   🛒 **Katalog Interaktif** – Siswa dapat mencari, memfilter, dan melihat detail buku ala kartu e-commerce.
+-   📝 **Form Peminjaman Dinamis** – Validasi stok otomatis, serta form akan muncul setelah siswa login atau registrasi.
+-   📊 **Dashboard Statistik** – Ringkasan koleksi, aktivitas peminjaman terakhir, dan shortcut aksi cepat untuk admin.
 
 ---
 
 ## 🛠️ Teknologi
 
-- ⚙️ **Laravel 12** – Framework backend utama.
-- 🔐 **Laravel Breeze** – Scaffolding autentikasi berbasis Blade & Tailwind.
-- 💾 **SQLite** – Basis data ringan untuk kemudahan distribusi.
-- 🎨 **TailwindCSS** – Utility-first styling dengan Vite.
-- 🧪 **Pest / PHPUnit** – Unit & feature testing.
+-   ⚙️ **Laravel 12** – Framework backend utama.
+-   🔐 **Laravel Breeze** – Scaffolding autentikasi berbasis Blade & Tailwind.
+-   💾 **SQLite** – Basis data ringan untuk kemudahan distribusi.
+-   🎨 **TailwindCSS** – Utility-first styling dengan Vite.
+-   🧪 **Pest / PHPUnit** – Unit & feature testing.
 
 ---
 
@@ -62,9 +62,9 @@ php artisan serve
 
 ### 🔑 Kredensial Default
 
-| Peran  | Username | Password  |
-| ------ | -------- | ---------- |
-| Admin  | `admin`  | `password` |
+| Peran | Username | Password   |
+| ----- | -------- | ---------- |
+| Admin | `admin`  | `password` |
 
 Setelah login sebagai admin, kamu bisa menambah akun siswa atau meminta siswa mendaftar sendiri melalui landing page.
 
@@ -74,20 +74,18 @@ Setelah login sebagai admin, kamu bisa menambah akun siswa atau meminta siswa me
 
 <table>
   <tr>
-    <td><img src="https://placehold.co/600x400?text=Landing+Hero" alt="Landing Hero" /></td>
-    <td><img src="https://placehold.co/600x400?text=Catalogue+Grid" alt="Catalogue Grid" /></td>
+    <td><img src="screenshots/1.png" /></td>
+    <td><img src="screenshots/2.png" /></td>
   </tr>
   <tr>
-    <td><img src="https://placehold.co/600x400?text=Book+Detail" alt="Book Detail" /></td>
-    <td><img src="https://placehold.co/600x400?text=Borrow+Form" alt="Borrow Form" /></td>
+    <td><img src="screenshots/3.png" /></td>
+    <td><img src="screenshots/4.png" /></td>
   </tr>
   <tr>
-    <td><img src="https://placehold.co/600x400?text=Admin+Dashboard" alt="Admin Dashboard" /></td>
-    <td><img src="https://placehold.co/600x400?text=Book+Management" alt="Book Management" /></td>
+    <td><img src="screenshots/5.png" /></td>
+    <td><img src="screenshots/7.png" /></td>
   </tr>
 </table>
-
-> 🖼️ Ganti URL placeholder di atas dengan screenshot final sesuai kebutuhanmu.
 
 ---
 

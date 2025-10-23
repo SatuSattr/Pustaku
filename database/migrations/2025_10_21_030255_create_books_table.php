@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // Tambahkan ini agar migrasi tidak dijalankan dalam transaksi
+    public $withinTransaction = false;
+
     /**
      * Run the migrations.
      */
@@ -14,7 +17,7 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique();
+            $table->string('slug')->unique(); // Tetap unique, tapi aman
             $table->string('author')->nullable();
             $table->string('category');
             $table->string('cover_image_path')->nullable();

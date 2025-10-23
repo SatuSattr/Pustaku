@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // Matikan transaksi (biar Neon nggak error di foreign key)
+    public $withinTransaction = false;
+
     /**
      * Run the migrations.
      */
@@ -13,8 +16,16 @@ return new class extends Migration
     {
         Schema::create('borrowings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('book_id')->constrained()->cascadeOnDelete();
+
+            // Foreign key harus konsisten dengan users.id & books.id (bigint)
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
+
+            $table->foreignId('book_id')
+                ->constrained('books')
+                ->cascadeOnDelete();
+
             $table->string('borrower_name');
             $table->unsignedInteger('quantity');
             $table->string('status')->default('processing');

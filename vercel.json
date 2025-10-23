@@ -1,0 +1,43 @@
+{
+    "version": 2,
+    "framework": null,
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.7.1"
+        }
+    },
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": { "distDir": "public" }
+        }
+    ],
+    "routes": [
+        { "src": "/build/(.*)", "dest": "/public/build/$1" },
+        { "src": "/(.*)", "dest": "/api/index.php" }
+    ],
+    "env": {
+        "APP_NAME": "Pustaku",
+        "APP_ENV": "production",
+        "APP_KEY": "base64:rJoSZJztHHLrscU8hzSvMxnOGb73PWOD6aY5teZjN+8=",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://pustaku.vercel.app",
+
+        "LOG_CHANNEL": "stack",
+        "LOG_LEVEL": "info",
+
+        "DB_CONNECTION": "pgsql",
+        "DB_URL": "postgresql://neondb_owner:npg_XLKkU3WBSJ5f@ep-rapid-union-a1fke3vj-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require",
+        "DB_SSLMODE": "require",
+
+        "CACHE_DRIVER": "file",
+        "SESSION_DRIVER": "file",
+        "QUEUE_CONNECTION": "sync",
+        "FILESYSTEM_DISK": "local",
+
+        "MAIL_MAILER": "log",
+        "MAIL_FROM_ADDRESS": "hello@example.com",
+        "MAIL_FROM_NAME": "Pustaku"
+    }
+}

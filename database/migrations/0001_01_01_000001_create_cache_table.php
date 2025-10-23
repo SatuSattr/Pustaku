@@ -6,19 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // Penting! Hindari transaksi di Neon/PostgreSQL
+    public $withinTransaction = false;
+
     /**
      * Run the migrations.
      */
     public function up(): void
     {
         Schema::create('cache', function (Blueprint $table) {
-            $table->string('key')->primary();
+            // Ganti nama kolom agar tidak bentrok dengan reserved keyword
+            $table->string('cache_key')->primary();
             $table->mediumText('value');
             $table->integer('expiration');
         });
 
         Schema::create('cache_locks', function (Blueprint $table) {
-            $table->string('key')->primary();
+            $table->string('cache_key')->primary();
             $table->string('owner');
             $table->integer('expiration');
         });

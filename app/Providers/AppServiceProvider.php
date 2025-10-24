@@ -15,6 +15,8 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
+    
+
     /**
      * Bootstrap any application services.
      */
@@ -22,5 +24,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Carbon::setLocale('id');
         setlocale(LC_TIME, 'id_ID.UTF-8');
+        if ($this->app->environment('production')) {
+        \URL::forceScheme('https');
+    }
     }
 }

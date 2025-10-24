@@ -6,8 +6,12 @@
     },
     "routes": [
         {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
             "src": "/storage/(.*)",
-            "dest": "/public/storage/"
+            "dest": "/public/storage/$1"
         },
         {
             "src": "/(.*)",
